@@ -1,0 +1,1159 @@
+{
+	"info": {
+		"_postman_id": "e9c62be6-fbb8-4674-acdf-368336591e8a",
+		"name": "Majstor.ba Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31929332"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?page=1&pageSize=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "100"
+								},
+								{
+									"key": "name",
+									"value": "majstorcina",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "halilovic",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1704302635619",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1704302635619"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MjIzMTQ0NDUzIiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQyOTY1MDMsImV4cCI6MTcwNDMwMDEwM30.RUMaieXXw8Hznfxz5VZ07ixUhT816clof8B5me37tGI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n     \n        \"mail\": \"ahmedhalilovic66@gmail.com\",\n        \"password\": \"sama\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mail\" : \"ahmedhalilovic19@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"mail\": \"bide@gmail.com\",\n  \"newPassword\": \"sama\",\n  \"confirmPassword\" : \"sama\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserByToken",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzA0MTM3NDI1IiwidXNlclR5cGUiOiJjcmFmdHNtYW4iLCJpYXQiOjE3MDQzMDQxNjAsImV4cCI6MTcwNDMwNzc2MH0.4iRkFscQxSZJvW2YBCEE78d4pH1N8le7VaRWVXsRo5w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/by-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"by-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI2NDksImV4cCI6MTcwNDMwNjI0OX0.mrex1lNRJBspnxrhu-gayAKcf_9S8D2qZcyLJn4MQI4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPassword\" : \"sama\",\n    \"newPassword\" : \"bide\",\n    \"confirmPassword\" : \"bide\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI2NDksImV4cCI6MTcwNDMwNjI0OX0.mrex1lNRJBspnxrhu-gayAKcf_9S8D2qZcyLJn4MQI4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "bide",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "bide",
+									"type": "text"
+								},
+								{
+									"key": "mail",
+									"value": "bide@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "062",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "vares",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/Users/ahmedhalilovic/Desktop/slike/onama.jpg"
+								},
+								{
+									"key": "type",
+									"value": "client",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "craftsman",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "zanat",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "zanatlic",
+									"type": "text"
+								},
+								{
+									"key": "mail",
+									"value": "ahmedhalilovic66@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "sama",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "sarajevo",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "38762509587",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/Users/ahmedhalilovic/Desktop/slike/iStock-1399201382.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "cretePost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzA0MTM3NDI1IiwidXNlclR5cGUiOiJjcmFmdHNtYW4iLCJpYXQiOjE3MDQzMDQxNjAsImV4cCI6MTcwNDMwNzc2MH0.4iRkFscQxSZJvW2YBCEE78d4pH1N8le7VaRWVXsRo5w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "cumur",
+									"type": "text"
+								},
+								{
+									"key": "service",
+									"value": "drva",
+									"type": "text"
+								},
+								{
+									"key": "workPictures",
+									"type": "file",
+									"src": "/Users/ahmedhalilovic/Desktop/slike/pozadina2.jpg"
+								},
+								{
+									"key": "price",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "cumur",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/post/create-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post",
+								"create-post"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzAzNTUwNDA4MjYyIiwidXNlclR5cGUiOiJjcmFmc3RtZW4iLCJpYXQiOjE3MDM2MjgxNzQsImV4cCI6MTcwMzYzMTc3NH0.Ta-_n4Gnd7uESsXWTF6nuVDtGMEmMfo_k2PX963RTM8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/post/?pageSize=100&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post",
+								""
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "service",
+									"value": "ugalj",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "visoko",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostByUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/post?user_id=1704304137425&pageSize=100&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1704304137425"
+								},
+								{
+									"key": "pageSize",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/post?post_id=38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0Mjk4MTkzNzkyIiwidXNlclR5cGUiOiJjcmFmdHNtYW4iLCJpYXQiOjE3MDQzMDMxMDIsImV4cCI6MTcwNDMwNjcwMn0.ma9nEsPyMuvonISno8eq59FpSvSKQt9vaOgNRQcuEMA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/post/delete-post/38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post",
+								"delete-post",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePost",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0Mjk4MTkzNzkyIiwidXNlclR5cGUiOiJjcmFmdHNtYW4iLCJpYXQiOjE3MDQzMDMxMDIsImV4cCI6MTcwNDMwNjcwMn0.ma9nEsPyMuvonISno8eq59FpSvSKQt9vaOgNRQcuEMA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "novi",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "najnoviji",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "removedPictures",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "workPictures",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "service",
+									"value": "ugalj",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/post/update-post/38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"post",
+								"update-post",
+								"38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "createComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI4NzEsImV4cCI6MTcwNDMwNjQ3MX0.4HgGNccZCymi8lydeqnxl8PALDTwx_nt9rg95Bm1RA4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"post_id\": 41,\n  \"comment\": \"This is a great post!\",\n  \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCommentsByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comment/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/comment/65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								"65"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "request",
+			"item": [
+				{
+					"name": "sendRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI4NzEsImV4cCI6MTcwNDMwNjQ3MX0.4HgGNccZCymi8lydeqnxl8PALDTwx_nt9rg95Bm1RA4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post_id\" : \"41\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/request/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserRequests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI4NzEsImV4cCI6MTcwNDMwNjQ3MX0.4HgGNccZCymi8lydeqnxl8PALDTwx_nt9rg95Bm1RA4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/request/userRequests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"userRequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRequestStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzA0MTM3NDI1IiwidXNlclR5cGUiOiJjcmFmdHNtYW4iLCJpYXQiOjE3MDQzMDQxNjAsImV4cCI6MTcwNDMwNzc2MH0.4iRkFscQxSZJvW2YBCEE78d4pH1N8le7VaRWVXsRo5w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"request_id\" : 15,\n    \"allowed\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/request/update-request-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"update-request-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRequestByUserIdAndPostId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MzAyNjM1NjE5IiwidXNlclR5cGUiOiJjbGllbnQiLCJpYXQiOjE3MDQzMDI4NzEsImV4cCI6MTcwNDMwNjQ3MX0.4HgGNccZCymi8lydeqnxl8PALDTwx_nt9rg95Bm1RA4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/request/user-post?post_id=38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"user-post"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "38"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customerSupport",
+			"item": [
+				{
+					"name": "sendEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone_number\" : \"062555555\",\n  \"message\": \"Hello, this is a test message.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "loginSession",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MjIxODY0NDAxIiwidXNlclR5cGUiOiJhZG1pbiIsImlhdCI6MTcwNDMwMzY2MCwiZXhwIjoxNzA0MzA3MjYwfQ.B_3WO1JZcVK_6l-lWv5a0AJzLhLnj2jdDWjFbATfMvw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/loginSession?page=2&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"loginSession"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/users?page=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "majstorcina",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/1704302635619",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"1704302635619"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MjIxODY0NDAxIiwidXNlclR5cGUiOiJhZG1pbiIsImlhdCI6MTcwNDMwMjM2OCwiZXhwIjoxNzA0MzA1OTY4fQ.glaosv9dH-Nzu58utj-Pi8cJXzR3ezYZR6KhHzlx49s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/1704298193792",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"1704298193792"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/posts?post_id=39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "post_id",
+									"value": "39"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPostByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/posts?user_id=1704304137425&pageSize=100&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1704304137425"
+								},
+								{
+									"key": "pageSize",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MjIxODY0NDAxIiwidXNlclR5cGUiOiJhZG1pbiIsImlhdCI6MTcwNDMwMjM2OCwiZXhwIjoxNzA0MzA1OTY4fQ.glaosv9dH-Nzu58utj-Pi8cJXzR3ezYZR6KhHzlx49s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/post/39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"post",
+								"39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCommetnsByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/comments/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"comments",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNzA0MjIxODY0NDAxIiwidXNlclR5cGUiOiJhZG1pbiIsImlhdCI6MTcwNDMwMjM2OCwiZXhwIjoxNzA0MzA1OTY4fQ.glaosv9dH-Nzu58utj-Pi8cJXzR3ezYZR6KhHzlx49s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/comment/87",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"comment",
+								"87"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
